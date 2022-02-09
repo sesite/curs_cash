@@ -20,13 +20,8 @@ class CursController extends GetxController {
     if (response.statusCode == 200) {
       Map<String, dynamic> datadecode = jsonDecode(response.data);
       Map<String, dynamic> datadecode1 = (datadecode['Valute']);
-      /*  Map<String, dynamic> datadecode2 = datadecode1['USD']; */
       datadecode1.forEach((key, value) {
-        /* print(key);
-        print(value); */
         CursDataModel _cursModel = CursDataModel.fromJson(value);
-
-        //CursDataModel _cursModel = CursDataModel.fromJson(datadecode2);
 
         cursList.add(CursDataModel(
             iD: _cursModel.iD,

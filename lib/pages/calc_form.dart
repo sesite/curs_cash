@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:kurs_cash/controllers/curs_controller.dart';
 
@@ -42,6 +43,10 @@ class _CalcFormState extends State<CalcForm> {
                 Expanded(
                   flex: 3,
                   child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    inputFormatters: <TextInputFormatter>[
+                      FilteringTextInputFormatter.digitsOnly,
+                    ],
                     decoration: const InputDecoration(
                         hintText: 'Введите сумму в рублях'),
                     validator: (val) =>
@@ -55,7 +60,7 @@ class _CalcFormState extends State<CalcForm> {
                 /* const SizedBox(width: 10), */
               ],
             ),
-            const SizedBox(height: 28),
+            const SizedBox(height: 10),
             Row(
               children: [
                 const Expanded(child: Text('Результат ')),

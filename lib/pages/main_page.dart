@@ -12,11 +12,26 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final _cursController = Get.find<CursController>();
 
-    void _showSettingsPanel() {
+    /*    void _showSettingsPanel() {
       showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (context) {
             return Container(
+              padding: const EdgeInsets.fromLTRB(60, 20, 60, 20),
+              child: Wrap(children: [CalcForm()]),
+            );
+          });
+    } */
+
+    void _showSettingsPanel() {
+      showModalBottomSheet(
+          shape: const RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))),
+          //isScrollControlled: true,
+          context: context,
+          builder: (context) {
+            return Padding(
               padding: const EdgeInsets.fromLTRB(60, 20, 60, 20),
               child: CalcForm(),
             );
