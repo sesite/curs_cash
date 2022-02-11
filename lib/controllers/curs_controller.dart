@@ -17,6 +17,7 @@ class CursController extends GetxController {
   Future<void> getData() async {
     final response =
         await dio.get('https://www.cbr-xml-daily.ru/daily_json.js');
+
     if (response.statusCode == 200) {
       Map<String, dynamic> datadecode = jsonDecode(response.data);
       Map<String, dynamic> datadecode1 = (datadecode['Valute']);

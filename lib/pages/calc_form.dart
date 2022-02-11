@@ -24,11 +24,6 @@ class _CalcFormState extends State<CalcForm> {
 
   @override
   Widget build(BuildContext context) {
-    initState() {
-      super.initState();
-      summa();
-    }
-
     return Form(
       child: Obx(
         () => Column(
@@ -57,7 +52,6 @@ class _CalcFormState extends State<CalcForm> {
                         }),
                   ),
                 ),
-                /* const SizedBox(width: 10), */
               ],
             ),
             const SizedBox(height: 10),
@@ -74,13 +68,6 @@ class _CalcFormState extends State<CalcForm> {
                   flex: 1,
                   child: DropdownButtonFormField(
                     value: _cursController.cursList[10].value.toString(),
-                    /* items: [
-                      DropdownMenuItem(
-                          value: _cursController.cursList[10].charCode,
-                          child: Text(_cursController.cursList[10].charCode)),
-                      DropdownMenuItem(value: 'EUR', child: Text('EUR')),
-                      DropdownMenuItem(value: 'GBP', child: Text('GBP')),
-                    ], */
                     items: _cursController.cursList.map((item) {
                       return DropdownMenuItem(
                         value: item.value.toString(),
