@@ -47,6 +47,12 @@ class MainPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              _cursController.getDataApi();
+            },
+            icon: const Icon(Icons.api, color: Colors.white),
+          ),
+          IconButton(
+            onPressed: () {
               _showSettingsPanel();
             },
             icon: const Icon(Icons.calculate, color: Colors.white),
